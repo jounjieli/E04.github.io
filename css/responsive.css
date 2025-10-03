@@ -29,9 +29,9 @@
         grid-template-columns: repeat(2, 1fr);
     }
     
-    /* Lineup Grid */
-    .lineup-grid {
-        grid-template-columns: repeat(3, 1fr);
+    /* Member List */
+    .member-list {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     /* Access Grid */
@@ -214,13 +214,18 @@
     }
     
     /* ===== Lineup Section ===== */
-    .lineup-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-sm);
+    .member-list {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
     }
     
-    .member-name {
-        font-size: 16px;
+    .member-item .member-name {
+        font-size: 20px;
+    }
+    
+    .member-item .member-role {
+        font-size: 14px;
     }
     
     .group-photo {
@@ -489,9 +494,9 @@
         font-size: 13px !important;
     }
     
-    /* Lineup Grid */
-    .lineup-grid {
-        grid-template-columns: 1fr;
+    /* Member List - already single column on mobile */
+    .member-list {
+        padding: var(--spacing-sm);
     }
     
     /* Section Title */

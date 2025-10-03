@@ -491,84 +491,47 @@ button {
     background: var(--color-bg-cream);
 }
 
-.lineup-grid {
+/* Member List Styles */
+.member-list {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xxl);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xxl);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
 }
 
-.lineup-card {
-    position: relative;
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
+.member-item {
+    background: var(--color-bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    text-align: center;
     box-shadow: var(--shadow-sm);
     transition: var(--transition-normal);
+    border: 2px solid transparent;
 }
 
-.lineup-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+.member-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-gold);
 }
 
-.lineup-image {
-    position: relative;
-    width: 100%;
-    padding-top: 100%; /* 1:1 Aspect Ratio */
-    overflow: hidden;
-}
-
-.lineup-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
-}
-
-.lineup-card:hover .lineup-image img {
-    transform: scale(1.1);
-}
-
-.lineup-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.8) 100%);
-    display: flex;
-    align-items: flex-end;
-    padding: var(--spacing-sm);
-    opacity: 0;
-    transition: var(--transition-normal);
-}
-
-.lineup-card:hover .lineup-overlay {
-    opacity: 1;
-}
-
-.member-role {
-    color: var(--primary-gold);
+.member-item .member-name {
+    font-size: 22px;
     font-weight: var(--font-weight-bold);
-    font-size: 16px;
-    margin: 0;
-}
-
-.lineup-info {
-    padding: var(--spacing-sm);
-    background: var(--color-bg-light);
-    text-align: center;
-}
-
-.member-name {
-    font-size: 18px;
     color: var(--primary-dark);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.member-item .member-role {
+    font-size: 16px;
+    color: var(--primary-gold);
+    font-weight: var(--font-weight-medium);
     margin: 0;
 }
 
+/* Group Photo Styles */
 .group-photo {
     margin-top: var(--spacing-xxl);
     border-radius: var(--border-radius-lg);
