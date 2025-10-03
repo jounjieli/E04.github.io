@@ -312,9 +312,8 @@ button {
     justify-content: center;
     text-align: center;
     background: 
-        linear-gradient(135deg, rgba(26, 26, 26, 0.75), rgba(139, 115, 85, 0.5)),
-        url('../assets/images/hero-bg.png') center/contain no-repeat;
-    background-color: #1A1A1A;
+        linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(139, 115, 85, 0.5)),
+        url('../assets/images/banner.png') center/cover no-repeat;
     background-attachment: fixed;
     color: var(--color-text-light);
     overflow: hidden;
