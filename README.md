@@ -31,7 +31,7 @@
 - **李晉杰 (JJ)** - 主唱
 - **賴昶融** - 主唱/貝斯手
 - **程韋凱** - 主唱/鼓手
-- **黃川崎** - 主唱/鍵盤手
+- **黃川騏** - 主唱/鍵盤手
 
 ## 🛠️ 技術架構
 
@@ -70,7 +70,7 @@ eo4-concert-website/
 │   │       ├── jj.jpg           # 李晉杰（需準備）
 │   │       ├── lai.jpg          # 賴昶融（需準備）
 │   │       ├── cheng.jpg        # 程韋凱（需準備）
-│   │       └── huang.jpg        # 黃川崎（需準備）
+│   │       └── huang.jpg        # 黃川騏（需準備）
 │   │
 │   └── icons/
 │       └── favicon.ico          # 網站圖示（需準備）
@@ -163,7 +163,7 @@ python -m http.server 8000
 | `jj.jpg` | 需準備 | 800x800px | JPG | 李晉杰個人照 |
 | `lai.jpg` | 需準備 | 800x800px | JPG | 賴昶融個人照 |
 | `cheng.jpg` | 需準備 | 800x800px | JPG | 程韋凱個人照 |
-| `huang.jpg` | 需準備 | 800x800px | JPG | 黃川崎個人照 |
+| `huang.jpg` | 需準備 | 800x800px | JPG | 黃川騏個人照 |
 | `favicon.ico` | 需準備 | 32x32px | ICO | 網站圖示 |
 
 **優化建議**：使用 [TinyPNG](https://tinypng.com/) 壓縮圖片，控制在 300KB 以下
