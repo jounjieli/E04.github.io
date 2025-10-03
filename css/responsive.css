@@ -157,6 +157,7 @@
     .hero-section {
         min-height: 100vh;
         background-attachment: scroll;
+        background-size: contain !important;
     }
     
     .hero-title {
