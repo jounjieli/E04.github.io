@@ -20,9 +20,18 @@
 ## 📅 活動資訊
 
 - **日期**：2025年11月1日（星期六）
-- **時間**：19:00 - END
+- **時間**：18:00 入場，18:30 開演
 - **地點**：台中市南屯區忠明南路478號B1
 - **場地**：沃酷新創空間 Words Live | 忠明館
+- **票價**：NT$ 300
+
+## 🎤 演出陣容
+
+- **陳星宏 (Anders)** - 主唱/鼓手
+- **李晉杰 (JJ)** - 主唱
+- **賴昶融** - 主唱/貝斯手
+- **程韋凱** - 主唱/鼓手
+- **黃川崎** - 主唱/鍵盤手
 
 ## 🛠️ 技術架構
 
@@ -52,25 +61,28 @@ eo4-concert-website/
 │
 ├── assets/
 │   ├── images/
-│   │   ├── hero-bg.jpg          # Hero 背景圖（需準備）
-│   │   ├── eo4-group.jpg        # 團體照（需準備）
-│   │   ├── qr-code.png          # 購票 QR Code（需準備）
-│   │   ├── og-image.jpg         # 社群分享圖（需準備）
+│   │   ├── hero-bg.jpg          # Hero 背景圖（使用 poster-1.jpg）
+│   │   ├── eo4-group.jpg        # 團體照（使用 poster-2.jpg）
+│   │   ├── qr-code.png          # 購票 QR Code（從海報提取）
+│   │   ├── og-image.jpg         # 社群分享圖（使用 poster-2.jpg）
 │   │   └── lineup/              # 成員照片目錄
-│   │       ├── member-1.jpg     （需準備）
-│   │       ├── member-2.jpg     （需準備）
-│   │       ├── member-3.jpg     （需準備）
-│   │       ├── member-4.jpg     （需準備）
-│   │       └── member-5.jpg     （需準備）
+│   │       ├── anders.jpg       # 陳星宏（需準備）
+│   │       ├── jj.jpg           # 李晉杰（需準備）
+│   │       ├── lai.jpg          # 賴昶融（需準備）
+│   │       ├── cheng.jpg        # 程韋凱（需準備）
+│   │       └── huang.jpg        # 黃川崎（需準備）
 │   │
 │   └── icons/
 │       └── favicon.ico          # 網站圖示（需準備）
 │
 ├── docs/
 │   ├── PRD.md                   # 產品需求文件
-│   ├── specifications.md        # 技術規格文件
-│   └── requirements.md          # 需求說明
+│   ├── IMAGE_GUIDE.md           # 圖片素材指南
+│   ├── POSTER_INTEGRATION.md    # 海報整合指南
+│   ├── DEPLOYMENT_GUIDE.md      # 部署指南
+│   └── specifications.md        # 技術規格文件
 │
+├── integrate-posters.ps1        # 海報整合自動化腳本
 └── README.md                    # 專案說明文件
 ```
 
@@ -118,18 +130,43 @@ python -m http.server 8000
 ### 替換圖片
 將圖片放入 `assets/images/` 目錄，並更新 HTML 中的路徑。
 
-## 🖼️ 圖片素材需求
+## 🖼️ 海報圖片整合
 
-| 檔案名稱 | 尺寸 | 格式 | 說明 |
-|---------|------|------|------|
-| `hero-bg.jpg` | 2000x1200px | JPG | Hero 背景圖 |
-| `eo4-group.jpg` | 1200x800px | JPG | 團體照 |
-| `member-1~5.jpg` | 800x800px | JPG | 成員照片 |
-| `qr-code.png` | 500x500px | PNG | 購票 QR Code |
-| `og-image.jpg` | 1200x630px | JPG | 社群分享圖 |
-| `favicon.ico` | 32x32px | ICO | 網站圖示 |
+### 快速整合（推薦）
 
-**優化建議**：使用 [TinyPNG](https://tinypng.com/) 壓縮圖片，控制在 200KB 以下
+使用自動化腳本快速整合海報圖片：
+
+```powershell
+# 在專案根目錄執行
+.\integrate-posters.ps1
+```
+
+腳本會自動：
+1. 將 `poster-1.jpg` 複製為 `hero-bg.jpg`（Hero 背景）
+2. 將 `poster-2.jpg` 複製為 `eo4-group.jpg`（團體照）
+3. 將 `poster-2.jpg` 複製為 `og-image.jpg`（社群分享）
+4. 檢查並複製 `qr-code.png`
+
+### 手動整合
+
+如果您偏好手動操作，請參考 [📖 海報整合指南](./docs/POSTER_INTEGRATION.md)
+
+### 圖片素材需求
+
+| 檔案名稱 | 來源 | 尺寸 | 格式 | 說明 |
+|---------|------|------|------|------|
+| `hero-bg.jpg` | poster-1.jpg | 2000x2000px | JPG | Hero 背景圖（俯拍團體照） |
+| `eo4-group.jpg` | poster-2.jpg | 1200x1600px | JPG | 團體照（米色背景） |
+| `og-image.jpg` | poster-2.jpg | 1200x630px | JPG | 社群分享圖 |
+| `qr-code.png` | 從海報提取 | 500x500px | PNG | 購票 QR Code |
+| `anders.jpg` | 需準備 | 800x800px | JPG | 陳星宏個人照 |
+| `jj.jpg` | 需準備 | 800x800px | JPG | 李晉杰個人照 |
+| `lai.jpg` | 需準備 | 800x800px | JPG | 賴昶融個人照 |
+| `cheng.jpg` | 需準備 | 800x800px | JPG | 程韋凱個人照 |
+| `huang.jpg` | 需準備 | 800x800px | JPG | 黃川崎個人照 |
+| `favicon.ico` | 需準備 | 32x32px | ICO | 網站圖示 |
+
+**優化建議**：使用 [TinyPNG](https://tinypng.com/) 壓縮圖片，控制在 300KB 以下
 
 ## 🌐 部署到 GitHub Pages
 
@@ -157,28 +194,56 @@ git push -u origin main
 - [x] 響應式導航列（桌面 + 手機版）
 - [x] Hero Section 大型主視覺
 - [x] 演唱會介紹區
-- [x] 演出陣容展示
-- [x] 時間軸節目表
+- [x] 演出陣容展示（包含成員姓名與角色）
+- [x] 時間軸節目表（18:00 入場、18:30 開演）
 - [x] 場地資訊與 Google Maps
 - [x] 交通指引
 - [x] 購票資訊 + QR Code
-- [x] 社群媒體整合
+- [x] 社群媒體整合（含 Instagram 分享）
 - [x] 平滑滾動效果
 - [x] AOS 滾動動畫
 - [x] SEO 優化（Meta Tags + Schema.org）
+- [x] 海報圖片整合（poster-1, poster-2）
+- [x] 自動化部署腳本
 
 ### 待完成
-- [ ] 替換真實圖片素材
-- [ ] 更新購票平台連結
-- [ ] 更新社群媒體連結
+- [ ] 放置真實海報圖片（poster-1.jpg, poster-2.jpg）
+- [ ] 提取並放置 QR Code（qr-code.png）
+- [ ] 準備成員個人照片（5張）
+- [ ] 更新購票平台連結（目前連結到官網）
+- [ ] 更新社群媒體連結（Instagram, Facebook, YouTube）
+- [ ] 建立 favicon 圖示
 
 ## 🐛 問題排查
 
 ### 圖片無法顯示
-**解決**：確認圖片已放入 `assets/images/` 目錄，檢查路徑是否正確
+**解決**：
+1. 確認圖片已放入 `assets/images/` 目錄
+2. 檢查檔案名稱大小寫（GitHub 有區分）
+3. 清除瀏覽器快取（Ctrl + Shift + R）
+4. 使用開發者工具檢查路徑錯誤
 
 ### 導航選單無法開啟（手機版）
-**解決**：確認 `js/main.js` 已正確載入，清除瀏覽器快取
+**解決**：
+1. 確認 `js/main.js` 已正確載入
+2. 檢查瀏覽器 Console 是否有 JavaScript 錯誤
+3. 清除瀏覽器快取
+
+### 海報整合腳本無法執行
+**解決**：
+1. 確認在專案根目錄執行腳本
+2. 檢查 PowerShell 執行政策：
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+3. 確認海報檔案路徑正確
+
+## 📚 相關文件
+
+- **[📋 產品需求文件 (PRD)](./docs/PRD.md)** - 完整的功能需求說明
+- **[🚀 部署指南](./docs/DEPLOYMENT_GUIDE.md)** - 詳細的 GitHub Pages 部署教學
+- **[🖼️ 圖片素材指南](./docs/IMAGE_GUIDE.md)** - 圖片準備與規格說明
+- **[🎨 海報整合指南](./docs/POSTER_INTEGRATION.md)** - 海報圖片整合詳細說明
 
 ## 📞 聯絡資訊
 
