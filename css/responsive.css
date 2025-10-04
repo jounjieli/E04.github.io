@@ -170,8 +170,25 @@
     /* ===== Hero Section ===== */
     .hero-section {
         min-height: 100vh;
+        height: auto; /* 允許高度自動調整 */
         background-attachment: scroll;
-        background-position: center 30%; /* 調整背景位置顯示更多人物 */
+        background-position: center center;
+        background-size: cover; /* 改回 cover 避免黑邊 */
+        background-repeat: no-repeat;
+    }
+    
+    /* 調整 overlay 在手機上的透明度，讓人物更清晰 */
+    .hero-overlay {
+        background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+    }
+    
+    .hero-content {
+        padding-top: 120px; /* 增加上方間距，將內容往下推 */
+        padding-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* 內容靠下對齊 */
+        min-height: calc(100vh - 60px); /* 確保有足夠空間將內容推到下方 */
     }
     
     .hero-title-img {
@@ -622,9 +639,12 @@
 /* ===== Extra Small Mobile Styles (< 480px) ===== */
 @media screen and (max-width: 480px) {
     
-    /* Hero Section */
-    .hero-section {
-        background-position: center 25%; /* 調整背景位置以顯示更多上方人物 */
+    /* Hero Section - 移除這裡的背景設定，讓更具體的 portrait 媒體查詢生效 */
+    /* background 相關設定移到下方的 portrait 專用媒體查詢 */
+    
+    .hero-content {
+        padding-top: 60px;
+        padding-bottom: 40px;
     }
     
     .hero-title-img {
@@ -683,7 +703,10 @@
     
     .hero-section {
         min-height: 100vh;
-        background-position: center 35%; /* 橫向模式也調整背景位置 */
+        background-position: center center;
+        background-size: contain; /* 橫向模式也用 contain */
+        background-repeat: no-repeat;
+        background-color: #1a1a1a;
     }
     
     .hero-title-img {
@@ -740,5 +763,133 @@
         content: " (" attr(href) ")";
         font-size: 12px;
         color: #666;
+    }
+}
+
+/* ===== 豎屏窄設備特殊處理 - 使用豎版圖片確保五個人都能顯示 ===== */
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    .hero-section {
+        /* 使用豎版圖片 */
+        background: 
+            linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(139, 115, 85, 0.5)),
+            url('../assets/images/banner_heigh.JPG') center/cover no-repeat;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll;
+        min-height: 100vh;
+    }
+    
+    /* 調整 overlay 透明度，讓人物更清晰 */
+    .hero-overlay {
+        background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.5) 100%);
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 3;
+        padding-top: 30px; /* 減少上方間距 */
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: calc(100vh - 30px); /* 更多空間推到下方 */
+    }
+    
+    .hero-title-img {
+        max-width: 220px; /* 稍微縮小 logo */
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .hero-info p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 6px;
+    }
+    
+    .hero-cta {
+        margin-top: var(--spacing-md);
+    }
+}
+
+/* ===== 中等寬度豎屏 (500px-600px) - 針對較寬的手機 ===== */
+@media screen and (min-width: 500px) and (max-width: 600px) and (orientation: portrait) {
+    .hero-section {
+        /* 較寬的手機，稍微調整背景位置避免裁切 */
+        background-position: center 45% !important; /* 稍微往下偏移 */
+    }
+    
+    .hero-content {
+        min-height: calc(100vh - 20px);
+    }
+}
+
+/* ===== 極窄屏幕 (< 400px) 特別處理 ===== */
+@media screen and (max-width: 400px) and (orientation: portrait) {
+    .hero-section {
+        /* 繼續使用豎版圖片，cover 模式 */
+        background-size: cover !important;
+        background-position: center 40% !important; /* 稍微往下，避免頂部裁切 */
+    }
+    
+    .hero-overlay {
+        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%);
+    }
+    
+    .hero-content {
+        padding-top: 20px; /* 最小化上方間距 */
+        padding-bottom: 40px;
+        min-height: calc(100vh - 20px); /* 最大化向下推的空間 */
+    }
+    
+    .hero-title-img {
+        max-width: 190px; /* 進一步縮小 */
+    }
+    
+    .hero-info p {
+        font-size: 12.5px;
+        line-height: 1.6;
+        margin-bottom: 6px;
+    }
+    
+    .hero-date {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    
+    .btn-large {
+        padding: 13px 26px;
+        font-size: 14px;
+    }
+}
+
+/* ===== 超窄屏幕 (< 360px) 最終優化 ===== */
+@media screen and (max-width: 360px) and (orientation: portrait) {
+    .hero-section {
+        /* 保持使用豎版圖片 */
+        background-size: cover !important;
+        background-position: center 38% !important; /* 調整位置 */
+    }
+    
+    .hero-content {
+        padding-top: 15px;
+        min-height: calc(100vh - 15px);
+    }
+    
+    .hero-title-img {
+        max-width: 170px; /* 更小的 logo */
+    }
+    
+    .hero-info p {
+        font-size: 11.5px;
+        margin-bottom: 5px;
+    }
+    
+    .hero-date {
+        font-size: 15px !important;
+    }
+    
+    .btn-large {
+        padding: 12px 24px;
+        font-size: 13px;
     }
 }

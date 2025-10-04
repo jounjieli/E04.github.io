@@ -18,12 +18,29 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Navbar scroll effect
+// Get hero elements for fade effect
+const heroContent = document.querySelector('.hero-content');
+const heroOverlay = document.querySelector('.hero-overlay');
+
+// Navbar scroll effect + Hero fade effect
 window.addEventListener('scroll', function() {
-    if (window.scrollY > 100) {
+    const scrollY = window.scrollY;
+    
+    // Navbar scroll effect
+    if (scrollY > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
+    }
+    
+    // Hero content and overlay fade effect
+    // 當滾動超過 150px 時開始漸淡
+    if (scrollY > 150) {
+        if (heroContent) heroContent.classList.add('fade-out');
+        if (heroOverlay) heroOverlay.classList.add('fade-out');
+    } else {
+        if (heroContent) heroContent.classList.remove('fade-out');
+        if (heroOverlay) heroOverlay.classList.remove('fade-out');
     }
 });
 
