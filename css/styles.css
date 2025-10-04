@@ -994,7 +994,7 @@ button {
 
 /* Access Section - Enhanced Styling */
 .access-subsection {
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
 
 .access-subsection:first-child {
@@ -1005,7 +1005,7 @@ button {
     font-size: 18px;
     font-weight: var(--font-weight-bold);
     color: var(--primary-gold);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-xs);
     border-bottom: 2px solid rgba(212, 175, 55, 0.3);
 }
@@ -1014,7 +1014,10 @@ button {
     display: inline-block;
     color: var(--primary-gold);
     font-weight: var(--font-weight-medium);
-    margin-top: 4px;
+    margin-top: 6px;
+    padding: 2px 8px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 4px;
 }
 
 .distance-info {
@@ -1022,6 +1025,7 @@ button {
     color: var(--color-text-secondary);
     font-size: 14px;
     font-style: italic;
+    margin-top: 4px;
 }
 
 /* Parking Options */

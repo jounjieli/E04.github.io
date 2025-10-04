@@ -171,6 +171,7 @@
     .hero-section {
         min-height: 100vh;
         background-attachment: scroll;
+        background-position: center 30%; /* 調整背景位置顯示更多人物 */
     }
     
     .hero-title-img {
@@ -406,29 +407,75 @@
     
     .access-card h3 {
         font-size: 20px;
+        margin-bottom: var(--spacing-sm);
     }
     
     .access-list li {
         font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 12px;
     }
     
     .access-subtitle {
         font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .access-subsection {
+        margin-top: var(--spacing-md);
+    }
+    
+    .route-info {
+        display: block;
+        margin-top: 4px;
+        font-size: 14px;
+    }
+    
+    .distance-info {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
     }
     
     .main-address {
-        font-size: 16px;
+        font-size: 15px;
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
+        line-height: 1.5;
+    }
+    
+    .address-note-inline {
+        font-size: 12px;
+        line-height: 1.4;
     }
     
     .parking-title {
-        font-size: 15px;
+        font-size: 14px;
+        flex-wrap: wrap;
+    }
+    
+    .parking-address {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .parking-distance {
+        font-size: 13px;
     }
     
     .parking-option {
-        padding: var(--spacing-sm);
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .venue-address {
+        padding: 12px;
+    }
+    
+    .location-details li {
+        font-size: 13px;
+        line-height: 1.5;
     }
     
     .access-note {
@@ -632,6 +679,7 @@
     
     .hero-section {
         min-height: 100vh;
+        background-position: center 35%; /* 橫向模式也調整背景位置 */
     }
     
     .hero-title-img {
