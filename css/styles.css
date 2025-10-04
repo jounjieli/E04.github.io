@@ -79,19 +79,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow-x: auto; */
 }
 
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    width: 100vw;
+    /* overflow-x: hidden; */
 }
 
 body {
     font-family: var(--font-primary);
     color: var(--color-text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
     background-color: var(--color-bg-cream);
+    width: 100vw;
+    /* overflow-x: hidden; */
+}
+
+section#tickets > *,section#venue > *{
+    overflow: auto;
 }
 
 /* ===== Typography ===== */
@@ -325,8 +333,7 @@ button {
     text-align: center;
     background: 
         linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(139, 115, 85, 0.5)),
-        url('../assets/images/banner.webp') center/cover no-repeat,
-        url('../assets/images/banner.png') center/cover no-repeat; /* fallback */
+        url('../assets/images/banner_heigh.JPG') center 40%/cover no-repeat; /* 向下偏移到40%，確保頭部不被裁切 */
     background-attachment: fixed;
     color: var(--color-text-light);
     overflow: hidden;
@@ -340,12 +347,6 @@ button {
     height: 100%;
     background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
     z-index: 1;
-    transition: opacity 0.3s ease-out; /* 添加過渡效果 */
-}
-
-/* Hero overlay fade out class - 滾動時減淡遮罩讓人物更清晰 */
-.hero-overlay.fade-out {
-    opacity: 0.3;
 }
 
 .hero-content {
@@ -353,13 +354,6 @@ button {
     z-index: 2;
     max-width: 800px;
     padding: 0 var(--spacing-md);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* 添加漸淡和移動過渡效果 */
-}
-
-/* Hero content fade out class - 滾動時添加 */
-.hero-content.fade-out {
-    opacity: 0;
-    transform: translateY(-20px);
 }
 
 /* Hero Title Image */
