@@ -1,0 +1,28 @@
+{
+  "name": "github-static-webpage",
+  "version": "1.0.0",
+  "description": "![EO4 Concert Banner](./assets/images/og-image.jpg)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jounjieli/E04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jounjieli/E04/issues"
+  },
+  "homepage": "https://github.com/jounjieli/E04#readme",
+  "devDependencies": {
+    "sharp": "^0.34.4"
+  }
+}
