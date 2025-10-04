@@ -348,6 +348,40 @@ button {
     padding: 0 var(--spacing-md);
 }
 
+/* Hero Title Image */
+.hero-title-img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    
+    /* 保持柔和的發光效果 */
+    filter: drop-shadow(0 0 8px rgba(184, 134, 11, 0.35))
+            drop-shadow(0 0 20px rgba(184, 134, 11, 0.25))
+            drop-shadow(0 8px 25px rgba(0, 0, 0, 0.4));
+    
+    /* 更柔和的脈動動畫 */
+    animation: img-glow-pulse 4s ease-in-out infinite;
+}
+
+/* 圖片發光脈動動畫 */
+@keyframes img-glow-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(184, 134, 11, 0.35))
+                drop-shadow(0 0 20px rgba(184, 134, 11, 0.25))
+                drop-shadow(0 8px 25px rgba(0, 0, 0, 0.4));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(184, 134, 11, 0.5))
+                drop-shadow(0 0 30px rgba(184, 134, 11, 0.35))
+                drop-shadow(0 8px 25px rgba(0, 0, 0, 0.4));
+        transform: scale(1.005);
+    }
+}
+
+/* 保留舊的 .hero-title 樣式以防需要 */
 .hero-title {
     font-size: 140px;
     font-weight: 400;

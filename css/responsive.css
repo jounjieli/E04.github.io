@@ -19,6 +19,10 @@
     }
     
     /* Hero Section */
+    .hero-title-img {
+        max-width: 400px;
+    }
+    
     .hero-title {
         font-size: 100px;
         letter-spacing: 0px;
@@ -167,6 +171,10 @@
     .hero-section {
         min-height: 100vh;
         background-attachment: scroll;
+    }
+    
+    .hero-title-img {
+        max-width: 300px;
     }
     
     .hero-title {
@@ -549,6 +557,10 @@
 @media screen and (max-width: 480px) {
     
     /* Hero Section */
+    .hero-title-img {
+        max-width: 250px;
+    }
+    
     .hero-title {
         font-size: 56px;
         letter-spacing: 0px;
@@ -601,6 +613,10 @@
     
     .hero-section {
         min-height: 100vh;
+    }
+    
+    .hero-title-img {
+        max-width: 220px;
     }
     
     .hero-title {
