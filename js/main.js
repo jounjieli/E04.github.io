@@ -18,65 +18,12 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Get hero elements for fade effect
-const heroContent = document.querySelector('.hero-content');
-const heroSection = document.querySelector('.hero-section');
-
-console.log('Hero Content:', heroContent);
-console.log('Hero Section:', heroSection);
-
-// Navbar scroll effect + Hero fade effect
-let scrollCount = 0;
+// Navbar scroll effect
 window.addEventListener('scroll', function() {
-    const scrollY = window.scrollY;
-    scrollCount++;
-    
-    // Debug: 打印每次滾動
-    console.log(`=== Scroll Event #${scrollCount} ===`);
-    console.log(`scrollY: ${scrollY}`);
-    console.log(`heroContent exists: ${!!heroContent}`);
-    
-    // Navbar scroll effect
-    if (scrollY > 100) {
+    if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
-    }
-    
-    // Hero content fade effect - 一開始快速淡出，後面變慢
-    if (heroContent) {
-        console.log('✓ Entering fade logic');
-        
-        // 在 150px 內完成漸變
-        const fadeEnd = 150;
-        
-        if (scrollY === 0) {
-            console.log('Branch: scrollY === 0');
-            // 完全在頂部，完全顯示
-            heroContent.style.opacity = '1';
-            heroContent.style.transform = 'translateY(0)';
-        } else if (scrollY >= fadeEnd) {
-            console.log('Branch: scrollY >= fadeEnd');
-            // 滾動超過結束點，完全隱藏
-            heroContent.style.opacity = '0';
-            heroContent.style.transform = 'translateY(-60px)';
-        } else {
-            console.log('Branch: in between (fading)');
-            // 使用平方根曲線 - 一開始快，後面慢
-            const fadeProgress = scrollY / fadeEnd;
-            const eased = Math.sqrt(fadeProgress);
-            const opacity = 1 - eased;
-            const translateY = -60 * eased;
-            
-            console.log(`fadeProgress: ${fadeProgress.toFixed(4)}, eased: ${eased.toFixed(4)}, opacity: ${opacity.toFixed(4)}`);
-            
-            heroContent.style.opacity = Math.max(0, opacity).toFixed(2);
-            heroContent.style.transform = `translateY(${translateY}px)`;
-            
-            console.log(`Applied opacity: ${heroContent.style.opacity}, transform: ${heroContent.style.transform}`);
-        }
-    } else {
-        console.log('✗ heroContent not found!');
     }
 });
 
@@ -275,16 +222,14 @@ document.querySelectorAll('img').forEach(img => {
 });
 */
 
-// ===== Console Welcome Message =====
-console.log('%cEO4 演唱會 🎵', 'color: #D4AF37; font-size: 24px; font-weight: bold;');
-console.log('%c2025.11.01 | Words Live 忠明館', 'color: #666; font-size: 14px;');
-console.log('%cDeveloped with ❤️ for Music Lovers', 'color: #999; font-size: 12px;');
-
 // ===== Performance Monitoring (Optional) =====
+// Uncomment below to monitor page load performance
+/*
 window.addEventListener('load', function() {
     const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
     console.log(`⚡ Page loaded in ${loadTime}ms`);
 });
+*/
 
 // ===== Easter Egg: Konami Code =====
 let konamiCode = [];
@@ -316,5 +261,5 @@ function activateEasterEgg() {
         document.body.style.animation = '';
     }, 5000);
     
-    console.log('🎉 Easter egg activated! You found the secret!');
+    // Easter egg activated!
 }
