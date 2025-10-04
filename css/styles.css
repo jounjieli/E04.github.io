@@ -975,6 +975,23 @@ button {
     font-size: 12px;
 }
 
+.access-list li.address-note {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-style: italic;
+}
+
+.access-list li.address-note::before {
+    content: '※';
+    color: var(--primary-gold);
+    font-size: 16px;
+    font-style: normal;
+}
+
 .access-note {
     text-align: center;
     margin-top: var(--spacing-xxl);
