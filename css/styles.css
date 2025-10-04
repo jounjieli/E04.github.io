@@ -235,11 +235,18 @@ button {
 }
 
 .nav-brand a {
-    font-size: 28px;
-    font-weight: var(--font-weight-black);
-    color: var(--primary-gold);
-    font-family: var(--font-secondary);
-    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 50px;
+    width: auto;
+    transition: var(--transition-fast);
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
 }
 
 .nav-menu {

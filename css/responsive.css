@@ -111,9 +111,8 @@
         padding: 0 16px;
     }
     
-    .nav-brand a {
-        font-size: 24px;
-        letter-spacing: 2px;
+    .nav-logo {
+        height: 40px;
     }
     
     .nav-menu {
