@@ -623,6 +623,10 @@
 @media screen and (max-width: 480px) {
     
     /* Hero Section */
+    .hero-section {
+        background-position: center 25%; /* 調整背景位置以顯示更多上方人物 */
+    }
+    
     .hero-title-img {
         max-width: 250px;
     }
