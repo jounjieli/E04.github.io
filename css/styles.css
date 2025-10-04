@@ -184,14 +184,19 @@ button {
 }
 
 .btn-primary {
-    background: var(--primary-gold);
-    color: var(--primary-dark);
+    background: linear-gradient(135deg, #D4AF37 0%, #C9A428 100%);
+    color: #1A1A1A;
+    border: 2px solid #D4AF37;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .btn-primary:hover {
-    background: #C4A036;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 24px rgba(212, 175, 55, 0.5),
+        0 0 20px rgba(212, 175, 55, 0.3);
+    border-color: #FFD700;
 }
 
 .btn-secondary {
@@ -344,13 +349,54 @@ button {
 }
 
 .hero-title {
-    font-size: 120px;
-    font-weight: var(--font-weight-black);
-    color: var(--primary-gold);
-    text-transform: uppercase;
-    letter-spacing: 10px;
+    font-size: 140px;
+    font-weight: 400;
+    width: 100%;
+    color: #FFFFFF;
+    text-transform: none;
+    letter-spacing: 0px;
     margin-bottom: var(--spacing-lg);
-    text-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+    font-style: italic;
+    position: relative;
+    display: inline-block;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Script', cursive;
+    
+    /* 手寫風格的流暢傾斜 */
+    transform: skewX(-8deg) rotate(-2deg);
+    
+    /* 柔和的陰影效果 */
+    text-shadow: 
+        2px 2px 0px rgba(139, 115, 85, 0.25),
+        4px 4px 0px rgba(107, 86, 16, 0.15),
+        0 0 20px rgba(184, 134, 11, 0.4),
+        0 0 35px rgba(139, 115, 85, 0.3),
+        0 8px 25px rgba(0, 0, 0, 0.5);
+    
+    /* 柔和的金色漸層 - 降低亮度 */
+    background: linear-gradient(145deg, 
+        #D4C5A0 0%, 
+        #C9A428 25%, 
+        #B8860B 50%,
+        #8B6914 75%,
+        #6B5610 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    /* 更柔和的脈動動畫 */
+    animation: handwritten-glow 4s ease-in-out infinite;
+}
+
+/* 手寫體發光動畫 - 更柔和 */
+@keyframes handwritten-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(184, 134, 11, 0.35));
+        transform: skewX(-8deg) rotate(-2deg) scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(184, 134, 11, 0.5));
+        transform: skewX(-8deg) rotate(-2deg) scale(1.005);
+    }
 }
 
 .hero-info p {
@@ -372,7 +418,7 @@ button {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 65px;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
@@ -395,8 +441,8 @@ button {
     }
 }
 
-/* Music Notes Decoration */
-.music-notes {
+/* Hero Decorations - Geometric & Music Staff */
+.hero-decorations {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -404,40 +450,88 @@ button {
     left: 0;
     z-index: 1;
     pointer-events: none;
+    overflow: hidden;
 }
 
-.music-notes i {
+/* Music Staff Lines (五線譜) */
+.music-staff {
     position: absolute;
-    color: var(--primary-gold);
-    opacity: 0.1;
-    font-size: 80px;
-    animation: float 8s infinite ease-in-out;
+    opacity: 0.7;
 }
 
-.note-1 {
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
+.music-staff.top-left {
+    top: 8%;
+    left: 5%;
+    width: 200px;
+    height: 100px;
 }
 
-.note-2 {
-    top: 60%;
-    right: 15%;
-    animation-delay: 2s;
+.music-staff.bottom-right {
+    bottom: 12%;
+    right: 5%;
+    width: 200px;
+    height: 100px;
 }
 
-.note-3 {
+.music-staff svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Geometric Shapes */
+.geometric-circle {
+    position: absolute;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    animation: rotate-slow 20s linear infinite;
+}
+
+.circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 25%;
+    right: 12%;
+    border-width: 1.5px;
+}
+
+.circle-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 30%;
+    left: 15%;
+    border-width: 1px;
+    animation-delay: -5s;
+}
+
+.geometric-line {
+    position: absolute;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(212, 175, 55, 0.4) 50%, 
+        transparent 100%);
+    height: 1px;
+}
+
+.line-1 {
+    width: 150px;
+    top: 18%;
+    right: 20%;
+    transform: rotate(-25deg);
+}
+
+.line-2 {
+    width: 120px;
     bottom: 25%;
-    left: 20%;
-    animation-delay: 4s;
+    left: 10%;
+    transform: rotate(35deg);
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
     }
-    50% {
-        transform: translateY(-30px) rotate(10deg);
+    to {
+        transform: rotate(360deg);
     }
 }
 
@@ -500,42 +594,126 @@ button {
 
 /* Member List Styles */
 .member-list {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto var(--spacing-xxl);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xl);
     padding: var(--spacing-lg);
 }
 
 .member-item {
-    background: var(--color-bg-light);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-md);
+    background: linear-gradient(135deg, #faf8f3 0%, #f0e6d2 100%);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
     text-align: center;
     box-shadow: var(--shadow-sm);
     transition: var(--transition-normal);
     border: 2px solid transparent;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #D4AF37 0%, #c99b2e 50%, #b8860b 100%);
+    opacity: 0;
+    transition: var(--transition-normal);
+    z-index: 0;
+}
+
+.member-item:hover::before {
+    opacity: 0.12;
 }
 
 .member-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
     border-color: var(--primary-gold);
 }
 
+/* Member Avatar Styles */
+.member-avatar {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto var(--spacing-lg);
+    z-index: 1;
+}
+
+.member-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-gold);
+    transition: var(--transition-normal);
+}
+
+.member-item:hover .member-avatar img {
+    border-color: #c99b2e;
+    transform: scale(1.05);
+}
+
+/* Instagram Badge */
+.ig-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid transparent;
+    font-size: 16px;
+    transition: var(--transition-normal);
+}
+
+.member-item:hover .ig-badge {
+    transform: scale(1.15);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Member Info Text */
 .member-item .member-name {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: var(--font-weight-bold);
     color: var(--primary-dark);
-    margin: 0 0 var(--spacing-sm) 0;
+    margin: 0 0 var(--spacing-xs) 0;
+    position: relative;
+    z-index: 1;
 }
 
 .member-item .member-role {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--primary-gold);
     font-weight: var(--font-weight-medium);
+    margin: 0 0 var(--spacing-xs) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.member-item .member-ig {
+    font-size: 13px;
+    color: #888;
+    font-weight: var(--font-weight-normal);
     margin: 0;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    z-index: 1;
 }
 
 /* Group Photo Styles */
@@ -899,6 +1077,104 @@ button {
     background: var(--color-bg-light);
 }
 
+/* Members Instagram Grid */
+.members-ig-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto var(--spacing-xxl);
+    padding: 0 var(--spacing-md);
+}
+
+.member-ig-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.member-ig-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.member-ig-card:hover::before {
+    opacity: 0.1;
+}
+
+.member-ig-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.member-ig-avatar {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.member-ig-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.member-ig-info {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.member-ig-info h4 {
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-dark);
+}
+
+.member-ig-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-family: 'Courier New', monospace;
+}
+
+.member-ig-card .ig-icon {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.member-ig-card .ig-icon i {
+    color: white;
+    font-size: 20px;
+}
+
 .social-links {
     display: flex;
     justify-content: center;
@@ -995,7 +1271,7 @@ button {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
     padding-bottom: var(--spacing-xl);

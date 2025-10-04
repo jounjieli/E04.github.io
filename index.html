@@ -126,11 +126,37 @@
                     </a>
                 </div>
             </div>
-            <!-- Music Note Decorations -->
-            <div class="music-notes">
-                <i class="fas fa-music note-1"></i>
-                <i class="fas fa-music note-2"></i>
-                <i class="fas fa-music note-3"></i>
+            
+            <!-- Geometric Decorations & Music Staff Lines -->
+            <div class="hero-decorations">
+                <!-- Top Left Music Staff Lines -->
+                <div class="music-staff top-left">
+                    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10,20 Q50,10 80,25 T150,20" stroke="#D4AF37" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        <path d="M10,35 Q50,25 80,40 T150,35" stroke="#D4AF37" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        <path d="M10,50 Q50,40 80,55 T150,50" stroke="#D4AF37" stroke-width="1.5" fill="none" opacity="0.4"/>
+                        <circle cx="120" cy="22" r="4" fill="#D4AF37" opacity="0.6"/>
+                        <circle cx="140" cy="38" r="3" fill="#D4AF37" opacity="0.5"/>
+                    </svg>
+                </div>
+                
+                <!-- Bottom Right Music Staff Lines -->
+                <div class="music-staff bottom-right">
+                    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50,30 Q90,20 120,35 T190,30" stroke="#D4AF37" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        <path d="M50,45 Q90,35 120,50 T190,45" stroke="#D4AF37" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        <path d="M50,60 Q90,50 120,65 T190,60" stroke="#D4AF37" stroke-width="1.5" fill="none" opacity="0.4"/>
+                        <circle cx="80" cy="32" r="3" fill="#D4AF37" opacity="0.6"/>
+                        <circle cx="160" cy="48" r="4" fill="#D4AF37" opacity="0.5"/>
+                        <path d="M165,42 L165,54" stroke="#D4AF37" stroke-width="1.5" opacity="0.5"/>
+                    </svg>
+                </div>
+                
+                <!-- Geometric Shapes -->
+                <div class="geometric-circle circle-1"></div>
+                <div class="geometric-circle circle-2"></div>
+                <div class="geometric-line line-1"></div>
+                <div class="geometric-line line-2"></div>
             </div>
         </section>
 
@@ -182,28 +208,72 @@
                     <div class="title-divider"></div>
                 </div>
                 
-                <!-- Member List -->
+                <!-- Member List with Instagram -->
                 <div class="member-list" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member-item">
-                        <h3 class="member-name">陳星宏 (Anders)</h3>
-                        <p class="member-role">主唱/鼓手</p>
-                    </div>
-                    <div class="member-item">
+                    <!-- JJ -->
+                    <a href="https://www.instagram.com/jshen_journnal/?hl=zh-tw" target="_blank" class="member-item" rel="noopener noreferrer">
+                        <div class="member-avatar">
+                            <img src="./assets/images/lineup/jj.jpg" alt="李晉杰 (JJ)" onerror="this.src='./assets/images/E04_logo.png'">
+                            <div class="ig-badge">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
                         <h3 class="member-name">李晉杰 (JJ)</h3>
                         <p class="member-role">主唱</p>
-                    </div>
-                    <div class="member-item">
-                        <h3 class="member-name">賴昶融</h3>
-                        <p class="member-role">主唱/吉他手</p>
-                    </div>
-                    <div class="member-item">
+                        <p class="member-ig">@jshen_journnal</p>
+                    </a>
+                    
+                    <!-- Anders -->
+                    <a href="https://www.instagram.com/xinghong_1124/?hl=zh-tw" target="_blank" class="member-item" rel="noopener noreferrer">
+                        <div class="member-avatar">
+                            <img src="./assets/images/lineup/anders.jpg" alt="陳星宏 (Anders)" onerror="this.src='./assets/images/E04_logo.png'">
+                            <div class="ig-badge">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <h3 class="member-name">陳星宏 (Anders)</h3>
+                        <p class="member-role">主唱/鼓手</p>
+                        <p class="member-ig">@xinghong_1124</p>
+                    </a>
+                    
+                    <!-- 韋凱 -->
+                    <a href="https://www.instagram.com/cheng.1208/?hl=zh-tw" target="_blank" class="member-item" rel="noopener noreferrer">
+                        <div class="member-avatar">
+                            <img src="./assets/images/lineup/weikai.jpg" alt="程韋凱" onerror="this.src='./assets/images/E04_logo.png'">
+                            <div class="ig-badge">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
                         <h3 class="member-name">程韋凱</h3>
                         <p class="member-role">主唱/吉他手</p>
-                    </div>
-                    <div class="member-item">
+                        <p class="member-ig">@cheng.1208</p>
+                    </a>
+                    
+                    <!-- 昶融 -->
+                    <a href="https://www.instagram.com/v870617/?hl=zh-tw" target="_blank" class="member-item" rel="noopener noreferrer">
+                        <div class="member-avatar">
+                            <img src="./assets/images/lineup/changrong.jpg" alt="賴昶融" onerror="this.src='./assets/images/E04_logo.png'">
+                            <div class="ig-badge">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <h3 class="member-name">賴昶融</h3>
+                        <p class="member-role">主唱/吉他手</p>
+                        <p class="member-ig">@v870617</p>
+                    </a>
+                    
+                    <!-- 川騏 -->
+                    <a href="https://www.instagram.com/barrysing4u/?hl=zh-tw" target="_blank" class="member-item" rel="noopener noreferrer">
+                        <div class="member-avatar">
+                            <img src="./assets/images/lineup/chuanqi.jpg" alt="黃川騏" onerror="this.src='./assets/images/E04_logo.png'">
+                            <div class="ig-badge">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
                         <h3 class="member-name">黃川騏</h3>
                         <p class="member-role">主唱/鍵盤手</p>
-                    </div>
+                        <p class="member-ig">@barrysing4u</p>
+                    </a>
                 </div>
                 
                 <!-- Group Photo -->
@@ -409,32 +479,78 @@
                     <div class="title-divider"></div>
                     <p class="section-subtitle">Stay Connected</p>
                 </div>
-                <div class="social-links" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#" class="social-link instagram" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
+                
+                <!-- Members Instagram Grid -->
+                <div class="members-ig-grid" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://www.instagram.com/jshen_journnal/?hl=zh-tw" class="member-ig-card" target="_blank" rel="noopener noreferrer">
+                        <div class="member-ig-avatar">
+                            <img src="./assets/images/lineup/jj.jpg" alt="JJ" onerror="this.src='./assets/images/E04_logo.png'">
+                        </div>
+                        <div class="member-ig-info">
+                            <h4>李晉杰 (JJ)</h4>
+                            <p>@jshen_journnal</p>
+                        </div>
+                        <div class="ig-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
                     </a>
-                    <a href="#" class="social-link facebook" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                        <span>Facebook</span>
+                    
+                    <a href="https://www.instagram.com/xinghong_1124/?hl=zh-tw" class="member-ig-card" target="_blank" rel="noopener noreferrer">
+                        <div class="member-ig-avatar">
+                            <img src="./assets/images/lineup/anders.jpg" alt="Anders" onerror="this.src='./assets/images/E04_logo.png'">
+                        </div>
+                        <div class="member-ig-info">
+                            <h4>陳星宏 (Anders)</h4>
+                            <p>@xinghong_1124</p>
+                        </div>
+                        <div class="ig-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
                     </a>
-                    <a href="#" class="social-link youtube" target="_blank" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                        <span>YouTube</span>
+                    
+                    <a href="https://www.instagram.com/cheng.1208/?hl=zh-tw" class="member-ig-card" target="_blank" rel="noopener noreferrer">
+                        <div class="member-ig-avatar">
+                            <img src="./assets/images/lineup/weikai.jpg" alt="程韋凱" onerror="this.src='./assets/images/E04_logo.png'">
+                        </div>
+                        <div class="member-ig-info">
+                            <h4>程韋凱</h4>
+                            <p>@cheng.1208</p>
+                        </div>
+                        <div class="ig-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/v870617/?hl=zh-tw" class="member-ig-card" target="_blank" rel="noopener noreferrer">
+                        <div class="member-ig-avatar">
+                            <img src="./assets/images/lineup/changrong.jpg" alt="賴昶融" onerror="this.src='./assets/images/E04_logo.png'">
+                        </div>
+                        <div class="member-ig-info">
+                            <h4>賴昶融</h4>
+                            <p>@v870617</p>
+                        </div>
+                        <div class="ig-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/barrysing4u/?hl=zh-tw" class="member-ig-card" target="_blank" rel="noopener noreferrer">
+                        <div class="member-ig-avatar">
+                            <img src="./assets/images/lineup/chuanqi.jpg" alt="黃川騏" onerror="this.src='./assets/images/E04_logo.png'">
+                        </div>
+                        <div class="member-ig-info">
+                            <h4>黃川騏</h4>
+                            <p>@barrysing4u</p>
+                        </div>
+                        <div class="ig-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
                     </a>
                 </div>
+                
                 <div class="social-share" data-aos="fade-up" data-aos-delay="400">
                     <p>分享活動給朋友：</p>
                     <div class="share-buttons">
-                        <button class="share-btn" onclick="shareOnFacebook()" aria-label="分享到 Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
-                        <button class="share-btn" onclick="shareOnInstagram()" aria-label="分享到 Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </button>
-                        <button class="share-btn" onclick="shareOnLine()" aria-label="分享到 Line">
-                            <i class="fab fa-line"></i>
-                        </button>
                         <button class="share-btn" onclick="copyLink()" aria-label="複製連結">
                             <i class="fas fa-link"></i>
                         </button>
@@ -458,14 +574,7 @@
                     <p><i class="fas fa-envelope"></i> contact@eo4.com</p>
                     <p><i class="fas fa-phone"></i> 0912-345-678</p>
                 </div>
-                <div class="footer-social">
-                    <h4>追蹤我們</h4>
-                    <div class="footer-social-links">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
+                
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 EO4. All Rights Reserved.</p>

@@ -20,8 +20,9 @@
     
     /* Hero Section */
     .hero-title {
-        font-size: 80px;
-        letter-spacing: 8px;
+        font-size: 100px;
+        letter-spacing: 0px;
+        transform: skewX(-8deg) rotate(-2deg);
     }
     
     /* About Highlights */
@@ -31,6 +32,16 @@
     
     /* Member List */
     .member-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .member-avatar {
+        width: 130px;
+        height: 130px;
+    }
+    
+    /* Members Instagram Grid */
+    .members-ig-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
@@ -159,14 +170,44 @@
     }
     
     .hero-title {
-        font-size: 64px;
-        letter-spacing: 5px;
+        font-size: 72px;
+        letter-spacing: 0px;
         margin-bottom: var(--spacing-md);
+        transform: skewX(-8deg) rotate(-2deg);
     }
     
     .hero-info p {
         font-size: 16px;
         letter-spacing: 1px;
+    }
+    
+    /* Adjust decorations for mobile */
+    .music-staff.top-left {
+        width: 120px;
+        height: 60px;
+        top: 10%;
+        left: 2%;
+    }
+    
+    .music-staff.bottom-right {
+        width: 120px;
+        height: 60px;
+        bottom: 15%;
+        right: 2%;
+    }
+    
+    .circle-1 {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        right: 8%;
+    }
+    
+    .circle-2 {
+        width: 60px;
+        height: 60px;
+        bottom: 25%;
+        left: 10%;
     }
     
     .hero-date {
@@ -219,16 +260,49 @@
         padding: var(--spacing-md);
     }
     
+    .member-avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
     .member-item .member-name {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .member-item .member-role {
-        font-size: 14px;
+        font-size: 13px;
+    }
+    
+    .member-item .member-ig {
+        font-size: 12px;
     }
     
     .group-photo {
         margin-top: var(--spacing-xl);
+    }
+    
+    /* ===== Social Section ===== */
+    .members-ig-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .member-ig-card {
+        padding: var(--spacing-md);
+    }
+    
+    .member-ig-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .member-ig-info h4 {
+        font-size: 15px;
+    }
+    
+    .member-ig-info p {
+        font-size: 13px;
     }
     
     /* ===== Schedule Section ===== */
@@ -476,8 +550,9 @@
     
     /* Hero Section */
     .hero-title {
-        font-size: 48px;
-        letter-spacing: 3px;
+        font-size: 56px;
+        letter-spacing: 0px;
+        transform: skewX(-8deg) rotate(-2deg);
     }
     
     .hero-info p {
@@ -530,6 +605,8 @@
     
     .hero-title {
         font-size: 56px;
+        letter-spacing: 0px;
+        transform: skewX(-8deg) rotate(-2deg);
     }
     
     .hero-info p {
