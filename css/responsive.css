@@ -412,6 +412,25 @@
         font-size: 14px;
     }
     
+    .access-subtitle {
+        font-size: 16px;
+    }
+    
+    .main-address {
+        font-size: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .parking-title {
+        font-size: 15px;
+    }
+    
+    .parking-option {
+        padding: var(--spacing-sm);
+    }
+    
     .access-note {
         margin-top: var(--spacing-xl);
         padding: var(--spacing-sm);

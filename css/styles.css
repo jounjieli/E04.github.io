@@ -992,6 +992,143 @@ button {
     font-style: normal;
 }
 
+/* Access Section - Enhanced Styling */
+.access-subsection {
+    margin-top: var(--spacing-md);
+}
+
+.access-subsection:first-child {
+    margin-top: 0;
+}
+
+.access-subtitle {
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-gold);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.route-info {
+    display: inline-block;
+    color: var(--primary-gold);
+    font-weight: var(--font-weight-medium);
+    margin-top: 4px;
+}
+
+.distance-info {
+    display: inline-block;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Parking Options */
+.parking-option {
+    background: rgba(245, 241, 232, 0.5);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-md);
+    border-left: 3px solid var(--secondary-brown);
+    transition: var(--transition-normal);
+}
+
+.parking-option:last-child {
+    margin-bottom: 0;
+}
+
+.parking-option.recommended {
+    background: rgba(212, 175, 55, 0.1);
+    border-left-color: var(--primary-gold);
+    border-left-width: 4px;
+}
+
+.parking-option:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.parking-title {
+    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.parking-title i {
+    color: var(--primary-gold);
+}
+
+.parking-address {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 4px;
+    line-height: 1.6;
+}
+
+.parking-distance {
+    font-size: 14px;
+    color: var(--primary-gold);
+    font-weight: var(--font-weight-medium);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Venue Address */
+.venue-address {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(245, 241, 232, 0.5));
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.main-address {
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-address i {
+    color: var(--primary-gold);
+}
+
+.address-note-inline {
+    font-size: 13px;
+    color: var(--secondary-brown);
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.address-note-inline i {
+    color: var(--primary-gold);
+    font-size: 14px;
+}
+
+.location-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.location-details li i {
+    color: var(--primary-gold);
+    margin-top: 4px;
+    min-width: 16px;
+}
+
 .access-note {
     text-align: center;
     margin-top: var(--spacing-xxl);
